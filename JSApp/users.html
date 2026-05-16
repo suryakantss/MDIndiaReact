@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+
+<body>
+    <h3>User Details</h3>
+    <button onclick="getData()">Get Data</button>
+    <div>
+        <ol id="userui">
+
+        </ol>
+    </div>
+
+    <script>
+        function getData() {
+            let url = 'https://jsonplaceholder.typicode.com/users';
+            fetch(url).then(function (raw) {
+                return raw.json();
+            }).then(function (res) {
+                for(let u of res){
+               let liele = document.createElement("li");
+                   liele.append(u.username +","+u.email);
+                document.getElementById('userui').append(liele);
+                
+                }
+            }).catch(function (err) {
+                console.log(err);
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>

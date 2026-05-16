@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <h3>Products Details</h3>
+    <button onclick="getData()">Get Data</button>
+    <div>
+        <ul id="userui">
+
+        </ul>
+    </div>
+
+    <script>
+        function getData() {
+            let url = 'https://fakestoreapi.com/products';
+            fetch(url).then(function (raw) {
+                return raw.json();
+            }).then(function (res) {
+                for(let p of res){
+               let liele = document.createElement("li");
+                   liele.append(p.id +","+p.title+","+p.price);
+                document.getElementById('userui').append(liele);
+                
+                }
+            }).catch(function (err) {
+                console.log(err);
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>
