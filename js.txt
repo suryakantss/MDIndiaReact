@@ -1,0 +1,63 @@
+let a:number;
+
+a=100;
+ let msg:string;
+ msg="Hello World!!";
+
+ let arr:Array<number>;
+
+ arr=[10,20];
+
+ let valid:boolean;
+ valid=true;
+
+ let score:number|string;
+ score=100;
+ score="Hundred";
+
+ let myarray : [number,string,number,number];
+
+ myarray = [10,"welcome",30,40];
+
+ function add(a:number,b:number):number {
+  return a+b;
+ }
+
+class Customer {
+  constructor(private name:string,private email:string){
+
+  }
+  public display():void {
+    console.log(this.name +"," + this.email)
+  }
+}
+
+let c:Customer = new Customer("Tom","tom@msn.com");
+c.display();
+
+interface Product {
+  id:string,
+  name:string,
+  price:number 
+}
+
+let products :Array<Product> = [
+
+  {id:'P1',name:'Pen',price:100},
+  {id:'P2',name:'Marker',price:200},
+
+
+]
+
+
+
+
+
+ 
+
+
+
+
+
+
+
